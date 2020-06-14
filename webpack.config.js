@@ -5,7 +5,7 @@ module.exports = {
     entry: path.join(__dirname, './src/index.js'),
     output: {
         path: path.join(__dirname, "/dist"),
-        filename: 'bundle.[hash].js'
+        filename: 'bundle.[hash].js',
     },
     module: {
         rules: [
@@ -30,6 +30,16 @@ module.exports = {
                 'sass-loader'
               ]
             },
+            {
+              test: /\.(png|jpg|svg|gif)$/,
+              use: {
+                loader: "file-loader",
+                options: {
+                  name: "[name].[ext]",
+                  outputPath: "assets"
+                }
+              }
+          },
         ]
     },
     plugins: [
