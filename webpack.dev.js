@@ -5,6 +5,7 @@ const webpackCommonConfig = require('./webpack.common');
 
 module.exports = webpackMerge(webpackCommonConfig, {
     mode: 'development',
+    devtool: 'eval-source-map',
     module: {
         rules: [
             {
