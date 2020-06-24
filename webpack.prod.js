@@ -9,6 +9,10 @@ const webpackCommonConfig = require('./webpack.common');
 
 module.exports = webpackMerge(webpackCommonConfig, {
     mode: 'production',
+    output: {
+        path: path.join(__dirname, "/dist"),
+        filename: 'bundle.[contenthash].js',
+    },
     optimization: {
         minimizer: [
             new OptimizeCssAssetsPlugin(),
