@@ -26,9 +26,12 @@ module.exports = {
         ]
     },
     optimization: {
+      namedChunks: true,
       splitChunks: {
-        chunks: "all",
-      },
+        cacheGroups: {
+            commons: { test: /[\\/]node_modules[\\/]/, name: "common", chunks: "all" }
+        }
+      }
     },
     plugins: []
 };
